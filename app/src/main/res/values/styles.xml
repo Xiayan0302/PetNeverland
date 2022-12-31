@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Toolbar Title 大小與顏色-->
+    <style name="tool_bar_style" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textSize">40dp</item>
+        <item name="android:textColor">@color/Brown</item>
+        <item name="colorControlNormal">@color/Brown</item>
+        <item name="android:fontFamily">@font/matchuppro</item>
+        <item name="actionMenuTextColor">@color/Brown</item>
+    </style>
+
+    <!--Toolbar與Menu顏色與大小 不知道為啥這個存在才能改Title顏色-->
+    <style name="ToolbarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--更改Toolbar所有文字的大小-->
+        <item name="android:textSize">20dp</item>
+        <!--設定Menu視窗不覆蓋到Toolbar-->
+        <item name="overlapAnchor">false</item>
+    </style>
+</resources>
