@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="Brown">#b68962</color>
+    <color name="press_brown">#dcb98a</color>
     <color name="brown">#e8cfa6</color>
+
 </resources>
