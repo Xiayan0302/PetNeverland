@@ -10,18 +10,18 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class b_Game_closet extends AppCompatActivity {
+public class a_Game_food extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bgame_closet);
+        setContentView(R.layout.activity_agame_food);
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
         // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.closet);
+        bottomNavigationView.setSelectedItemId(R.id.food);
 
         // Perform item selected listener
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -30,10 +30,10 @@ public class b_Game_closet extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.food:
-                        startActivity(new Intent(getApplicationContext(),a_Game_food.class));
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.closet:
+                        startActivity(new Intent(getApplicationContext(),b_Game_closet.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(),MainGameActivity.class));

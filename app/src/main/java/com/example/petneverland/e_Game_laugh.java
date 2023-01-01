@@ -10,18 +10,18 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class b_Game_closet extends AppCompatActivity {
+public class e_Game_laugh extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bgame_closet);
+        setContentView(R.layout.activity_egame_laugh);
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
         // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.closet);
+        bottomNavigationView.setSelectedItemId(R.id.laugh);
 
         // Perform item selected listener
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -34,6 +34,8 @@ public class b_Game_closet extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.closet:
+                        startActivity(new Intent(getApplicationContext(),b_Game_closet.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(),MainGameActivity.class));
@@ -44,8 +46,6 @@ public class b_Game_closet extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.laugh:
-                        startActivity(new Intent(getApplicationContext(),e_Game_laugh.class));
-                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;

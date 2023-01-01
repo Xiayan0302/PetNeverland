@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/food"
+        android:title="Food"
+        android:icon="@drawable/navigation_food"/>
     <item
         android:id="@+id/closet"
         android:title="Closet"
@@ -8,9 +13,12 @@
         android:id="@+id/home"
         android:title="Home"
         android:icon="@drawable/navigation_home"/>
-
     <item
         android:id="@+id/message"
         android:title="Message"
         android:icon="@drawable/navigation_message"/>
+    <item
+        android:id="@+id/laugh"
+        android:title="Laugh"
+        android:icon="@drawable/navigation_laugh"/>
 </menu>

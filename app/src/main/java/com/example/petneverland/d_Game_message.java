@@ -29,6 +29,10 @@ public class d_Game_message extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId())
                 {
+                    case R.id.food:
+                        startActivity(new Intent(getApplicationContext(),a_Game_food.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.closet:
                         startActivity(new Intent(getApplicationContext(),b_Game_closet.class));
                         overridePendingTransition(0,0);
@@ -38,6 +42,10 @@ public class d_Game_message extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.message:
+                        return true;
+                    case R.id.laugh:
+                        startActivity(new Intent(getApplicationContext(),e_Game_laugh.class));
+                        overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
