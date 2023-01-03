@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/doll_touch1"
+        android:duration="300"/>
+    <item
+        android:drawable="@drawable/doll_touch2"
+        android:duration="300"/>
+    <item
+        android:drawable="@drawable/doll_touch3"
+        android:duration="300"/>
+    <item
+        android:drawable="@drawable/doll_touch4"
+        android:duration="300"/>
+</animation-list>

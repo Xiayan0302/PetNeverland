@@ -30,6 +30,8 @@
         app:itemTextColor="@drawable/selector"
         app:layout_constraintBottom_toTopOf="@+id/tool_bar"
         app:menu="@menu/menu_navigation"
-        app:labelVisibilityMode="labeled"/>
+        app:labelVisibilityMode="labeled"
+        app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
+        app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle"/>
 
 </RelativeLayout>
