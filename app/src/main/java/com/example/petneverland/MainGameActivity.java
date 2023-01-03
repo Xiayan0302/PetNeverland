@@ -27,7 +27,6 @@ public class MainGameActivity extends AppCompatActivity  {
     TextView Feeling;
     int feel = 0;
     boolean feelmax = true;
-    boolean set_anim = true;
 
 
     @Override
@@ -38,14 +37,6 @@ public class MainGameActivity extends AppCompatActivity  {
         Feeling = (TextView) findViewById(R.id.Feeling);
         Feeling.setText(String.valueOf(feel));
 
-//        //把xml的資源轉成view
-//        LayoutInflater inflater = getLayoutInflater();
-//        //R.layout.toast_view XML名稱
-//        //R.id.toast_layoutt XML裡面Layout ID
-//        View layout = inflater.inflate(R.layout.toast_view, (ViewGroup) findViewById(R.id.toast_layout));
-//        //透過 inflater跟View方式來取得元件的控制權
-//        TextView text = (TextView) layout.findViewById(R.id.text);
-//        text.setText("我很開心了!");
 
 //動畫設定
         anim_doll = (ImageView) findViewById(R.id.anim_doll);
@@ -63,17 +54,18 @@ public class MainGameActivity extends AppCompatActivity  {
         anim_doll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//設定點擊動畫
-                anim_doll.setImageResource(R.drawable.doll_touch);
-                // 核心实现代码
-                ad = (AnimationDrawable) anim_doll.getDrawable();
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        ad.start();
-                    }
-                }, 300);
+
+////設定點擊動畫
+//                anim_doll.setImageResource(R.drawable.doll_touch);
+//                // 核心实现代码
+//                ad = (AnimationDrawable) anim_doll.getDrawable();
+//                Handler handler = new Handler();
+//                handler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        ad.start();
+//                    }
+//                }, 300);
 
 //設定心情值
 
@@ -81,6 +73,7 @@ public class MainGameActivity extends AppCompatActivity  {
                     feel = feel +1;
                     Feeling.setText(String.valueOf(feel));
                 }
+    //心情值滿時toast提示
                 else {
                     //把xml的資源轉成view
                     LayoutInflater inflater = getLayoutInflater();
@@ -90,16 +83,28 @@ public class MainGameActivity extends AppCompatActivity  {
                     //透過 inflater跟View方式來取得元件的控制權
                     TextView text = (TextView) layout.findViewById(R.id.text);
                     text.setText("I am Happy now!");
-//                    Toast.makeText(MainGameActivity.this, "Toast 基本用法", Toast.LENGTH_LONG).show();
                     Toast toast = Toast.makeText(MainGameActivity.this, "Toast置中顯示", Toast.LENGTH_LONG);
                     toast.setGravity(Gravity.CENTER,0, -200);
                     toast.setView(layout);
                     toast.show();
-                }
+    //心情值滿時更改動畫
+                    anim_doll.setImageResource(R.drawable.doll_touch);
+                    // 核心实现代码
+                    ad = (AnimationDrawable) anim_doll.getDrawable();
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            ad.start();
+                        }
+                    }, 300);
 
+                }
                 if (feel >= 10) {
                     feelmax = false;
                 }
+
+
             }
         });
 
