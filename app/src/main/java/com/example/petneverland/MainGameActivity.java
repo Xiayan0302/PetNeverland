@@ -110,8 +110,6 @@ public class MainGameActivity extends AppCompatActivity  {
 
 
 
-
-
 //        anim_doll.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
 //            public boolean onTouch(View view, MotionEvent event) {
