@@ -21,7 +21,7 @@ public class d_Game_message_edit extends AppCompatActivity {
 
         Intent it = getIntent();               //取得傳入的 Intent 物件
         String s = it.getStringExtra("memo");  //讀出名為 "備忘" 的 String 資料
-        position = it.getIntExtra("requestCode",position);
+        position = it.getIntExtra("number",position);
 
         txv = (TextView)findViewById(R.id.textView);
         txv.setText(s.substring(0, 2));                 //在畫面左上角顯示編號
@@ -40,7 +40,7 @@ public class d_Game_message_edit extends AppCompatActivity {
     public void onSave(View v) {    //按儲存鈕時
         Intent it2 = new Intent();
         it2.putExtra("memo", txv.getText() + " " + edt.getText()); // 附加項目編號與修改後的內容
-        it2.putExtra("requestCode", position);
+        it2.putExtra("number", position);
         setResult(RESULT_OK, it2); // 傳回代表成功的結果碼, 以及修改的資料
         finish();    //結束活動
     }

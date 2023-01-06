@@ -74,6 +74,8 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <!--設定音樂服務-->
+        <service android:name=".MusicPlayer"/>
     </application>
 
 </manifest>

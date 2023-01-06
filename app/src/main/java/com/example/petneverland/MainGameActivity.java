@@ -78,15 +78,15 @@ public class MainGameActivity extends AppCompatActivity  {
                     //把xml的資源轉成view
                     LayoutInflater inflater = getLayoutInflater();
                     //R.layout.toast_view XML名稱
-                    //R.id.toast_layoutt XML裡面Layout ID
+                    //R.id.toast_layout XML裡面Layout ID
                     View layout = inflater.inflate(R.layout.toast_view, (ViewGroup) findViewById(R.id.toast_layout));
-                    //透過 inflater跟View方式來取得元件的控制權
-                    TextView text = (TextView) layout.findViewById(R.id.text);
-                    text.setText("I am Happy now!");
-                    Toast toast = Toast.makeText(MainGameActivity.this, "Toast置中顯示", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(MainGameActivity.this, "Toast置中顯示", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER,0, -200);
                     toast.setView(layout);
                     toast.show();
+                    //透過 inflater跟View方式來取得元件的控制權
+                    TextView text = (TextView) layout.findViewById(R.id.text);
+                    text.setText("I am Happy now!");
     //心情值滿時更改動畫
                     anim_doll.setImageResource(R.drawable.doll_touch);
                     // 核心实现代码
@@ -184,5 +184,7 @@ public class MainGameActivity extends AppCompatActivity  {
 
 
         }
+
+
 
 }

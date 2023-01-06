@@ -27,7 +27,7 @@ public class d_Game_message extends AppCompatActivity
 
     String[] aMemo ={
             "1.按一下可以編輯備忘",
-            "2.長按可以清除備忘","3.","4.","5.","6."};
+            "2.長按可以清除備忘","3.","4.","5.","6.","7.","8.","9.","10."};
     ListView lv;
     ArrayAdapter<String> aa;
 
@@ -90,7 +90,7 @@ public class d_Game_message extends AppCompatActivity
     @Override
     public void onItemClick(AdapterView<?> a, View v, int pos, long id) {
         Intent it = new Intent(this, d_Game_message_edit.class);
-        it.putExtra("requestCode",pos);      //附加編號
+        it.putExtra("number",pos);      //附加編號
         it.putExtra("memo", aMemo[pos]); //附加備忘項目的內容
         activityResultLaunch.launch(it);
     }
@@ -125,7 +125,7 @@ public class d_Game_message extends AppCompatActivity
                 public void onActivityResult(ActivityResult result) {
                     if (result.getResultCode() == RESULT_OK) {
                         Intent data = result.getData();
-                        int requestCode = data.getIntExtra("requestCode", 0);
+                        int requestCode = data.getIntExtra("number", 0);
                         aMemo[requestCode] = data.getStringExtra("memo"); // 使用傳回的資料更新陣列內容
                         aa.notifyDataSetChanged(); // 通知 Adapter 陣列內容有更新
                     }
