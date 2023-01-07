@@ -8,7 +8,7 @@
 
 <!--    Toolbar Title 大小與顏色-->
     <style name="tool_bar_style" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:textSize">40dp</item>
+        <item name="android:textSize">50dp</item>
         <item name="android:textColor">@color/Brown</item>
         <item name="colorControlNormal">@color/Brown</item>
         <item name="android:fontFamily">@font/matchuppro</item>
@@ -21,5 +21,29 @@
         <item name="android:textSize">20dp</item>
         <!--設定Menu視窗不覆蓋到Toolbar-->
         <item name="overlapAnchor">false</item>
+    </style>
+
+<!--food popup-->
+    <style name="font_style">
+        <item name="android:textSize">48dp</item>
+        <item name="fontFamily">@font/silver</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/Brown</item>
+    </style>
+
+    <!--States text-->
+    <style name="states_style">
+        <item name="android:textSize">36dp</item>
+        <item name="fontFamily">@font/silver</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/set_brown</item>
+    </style>
+
+    <!--States text-->
+    <style name="states_int_style">
+        <item name="android:textSize">30dp</item>
+        <item name="fontFamily">@font/silver</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 </resources>

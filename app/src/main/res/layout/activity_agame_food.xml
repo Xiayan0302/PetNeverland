@@ -5,12 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background_wall"
     tools:context=".a_Game_food">
-
-    <include
-        android:id="@+id/tool_bar"
-        layout="@layout/toolbar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -24,112 +20,188 @@
         app:itemTextColor="@drawable/selector"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toTopOf="@+id/tool_bar"
-        app:menu="@menu/menu_navigation" >
+        app:menu="@menu/menu_navigation">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <ImageView
+            android:id="@+id/msgTxv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <CheckBox
-                android:id="@+id/checkBox1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="80dp"
-                android:background="@drawable/checkbox"
-                android:text="123"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/Brown" />
-
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="80dp"
-                android:background="@drawable/checkbox"
-                android:text="123"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/Brown" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-75dp"
-            android:orientation="horizontal"
+            android:layout_marginTop="56dp"
+            android:layout_weight="0"
+            android:background="@drawable/state"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="80dp"
-                android:background="@drawable/checkbox"
-                android:text="123"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/Brown" />
-
-            <CheckBox
-                android:id="@+id/checkBox4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="80dp"
-                android:background="@drawable/checkbox"
-                android:text="123"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/Brown" />
-        </LinearLayout>
-
-        <LinearLayout
+        <ImageView
+            android:id="@+id/state_food"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-75dp"
-            android:layout_marginEnd="31dp"
-            android:orientation="horizontal"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="83dp"
+            android:layout_weight="0"
+            android:background="@drawable/state_food1"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <CheckBox
-                android:id="@+id/checkBox5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="80dp"
-                android:background="@drawable/checkbox"
-                android:text="123"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/Brown" />
+        <TextView
+            android:id="@+id/TXV"
+            style="@style/states_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="83dp"
+            android:layout_weight="0"
+            android:text="飽食度"
+            app:layout_constraintStart_toStartOf="@+id/msgTxv"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <CheckBox
-                android:id="@+id/checkBox6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="80dp"
-                android:background="@drawable/checkbox"
-                android:text="123"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/Brown" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/eatTXV"
+            style="@style/states_int_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="0"
+            android:text="0"
+            app:layout_constraintEnd_toEndOf="@+id/msgTxv"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="107dp">
+
+
+            <CheckBox
+                android:id="@+id/food_bread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/check_bread"
+                android:button="@null"
+                android:translationZ="2dp"
+                app:layout_constraintBottom_toTopOf="@+id/food_burger"
+                app:layout_constraintStart_toStartOf="@+id/food_shelf" />
+
+            <CheckBox
+                android:id="@+id/food_egg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="60dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/check_egg"
+                android:button="@null"
+                android:translationZ="2dp"
+                app:layout_constraintBottom_toTopOf="@+id/food_applepie"
+                app:layout_constraintEnd_toEndOf="@+id/food_shelf" />
+
+            <CheckBox
+                android:id="@+id/food_burger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/check_burger"
+                android:button="@null"
+                android:translationZ="2dp"
+                app:layout_constraintBottom_toTopOf="@+id/food_cake"
+                app:layout_constraintStart_toStartOf="@+id/food_shelf" />
+
+            <CheckBox
+                android:id="@+id/food_applepie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="60dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/check_applepie"
+                android:button="@null"
+                android:translationZ="2dp"
+                app:layout_constraintBottom_toTopOf="@+id/food_ginger"
+                app:layout_constraintEnd_toEndOf="@+id/food_shelf" />
+
+            <CheckBox
+                android:id="@+id/food_cake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/check_cake"
+                android:button="@null"
+                android:translationZ="2dp"
+                app:layout_constraintBottom_toBottomOf="@+id/food_shelf"
+                app:layout_constraintStart_toStartOf="@+id/food_shelf" />
+
+            <CheckBox
+                android:id="@+id/food_ginger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="60dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/check_ginger"
+                android:button="@null"
+                android:translationZ="2dp"
+                app:layout_constraintBottom_toBottomOf="@+id/food_shelf"
+                app:layout_constraintEnd_toEndOf="@+id/food_shelf" />
+
+            <ImageView
+                android:id="@+id/food_shelf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:foregroundGravity="center"
+                android:translationZ="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/food_shelf" />
+
+            <ImageView
+                android:id="@+id/floor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="322dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/background_floor" />
+
+            <Button
+                android:id="@+id/eat"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:text="吃掉"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@drawable/food_shelf"
+                android:layout_marginBottom="85dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </RelativeLayout>

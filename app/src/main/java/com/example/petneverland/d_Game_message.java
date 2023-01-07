@@ -8,13 +8,19 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Switch;
 
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -30,7 +36,7 @@ public class d_Game_message extends AppCompatActivity
             "2.長按可以清除備忘","3.","4.","5.","6.","7.","8.","9.","10."};
     ListView lv;
     ArrayAdapter<String> aa;
-
+    Dialog myDialog;
 
 
     @Override
@@ -85,7 +91,53 @@ public class d_Game_message extends AppCompatActivity
                 return false;
             }
         });
-    }
+
+        //設定返回主畫面
+        ImageButton imageButton1 = findViewById(R.id.game_back);
+        imageButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(d_Game_message.this, MainActivity.class);
+                startActivity(it);
+            }
+        });
+
+//設定popupWindows
+        myDialog = new Dialog(this);
+
+        ImageButton imageButton = findViewById(R.id.game_set);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ImageButton button;
+                Switch switch_music;
+                myDialog.setContentView(R.layout.activity_settings);
+                button = (ImageButton) myDialog.findViewById(R.id.dismiss);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        myDialog.dismiss();
+                    }
+                });
+                myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                myDialog.show();
+                //設定控制音樂開關
+                switch_music = (Switch) myDialog.findViewById(R.id.switch_music);
+                switch_music.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                        if (isChecked) {
+                            // The switch button is on
+                            startService(new Intent(getApplicationContext(), MusicPlayer.class));
+                        } else {
+                            // The switch button is off
+                            stopService(new Intent(getApplicationContext(), MusicPlayer.class));
+                        }
+                    }
+                });
+            }
+        });
+    }//OnCreate
 
     @Override
     public void onItemClick(AdapterView<?> a, View v, int pos, long id) {
@@ -95,28 +147,12 @@ public class d_Game_message extends AppCompatActivity
         activityResultLaunch.launch(it);
     }
 
-
     @Override
     public boolean onItemLongClick(AdapterView<?> a, View v, int pos, long id) {
         aMemo[pos] = (pos+1) + "."; //將內容清除 (只剩編號)
         aa.notifyDataSetChanged();  //通知 Adapter 要更新陣列內容
         return true;     			//傳回 true 表示此事件已處理
     }
-    
-
-//    ActivityResultLauncher<Intent> activityResultLaunch = registerForActivityResult(
-//            new ActivityResultContracts.StartActivityForResult(),
-//            new ActivityResultCallback<ActivityResult>() {
-//                @Override
-//                public void onActivityResult(ActivityResult result) {
-//                    if (result.getResultCode() == RESULT_OK) {
-//                        Intent data = result.getData();
-//                        int index = result.getResultCode();
-//                        aMemo[index] = data.getStringExtra("memo"); // 使用傳回的資料更新陣列內容
-//                        aa.notifyDataSetChanged(); // 通知 Adapter 陣列內容有更新
-//                    }
-//                }
-//            });
 
     ActivityResultLauncher<Intent> activityResultLaunch = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -131,21 +167,5 @@ public class d_Game_message extends AppCompatActivity
                     }
                 }
             });
-
-//    ActivityResultLauncher<String> activityResultLaunch = registerForActivityResult(new ActivityResultContracts.GetContent(),
-//            new ActivityResultCallback<Uri>() {
-//                @Override
-//                public void onActivityResult(Uri uri) {
-//                    // Handle the returned Uri
-//                }
-//            });
-
-//
-//        protected void onActivityResult(int requestCode, int resultCode, Intent it) {
-//        if(resultCode == RESULT_OK) {
-//            aMemo[requestCode] = it.getStringExtra("memo"); // 使用傳回的資料更新陣列內容
-//            aa.notifyDataSetChanged(); // 通知 Adapter 陣列內容有更新
-//        }
-//    }
 
 }
