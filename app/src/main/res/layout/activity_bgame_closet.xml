@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/closet_wall"
     tools:context=".b_Game_closet">
 
     <include
@@ -27,6 +26,133 @@
         app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="107dp">
+
+
+        <CheckBox
+            android:id="@+id/closet_gentle_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/check_gentle_black"
+            android:button="@null"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/closet_santa_red"
+            app:layout_constraintStart_toStartOf="@+id/closet" />
+
+        <CheckBox
+            android:id="@+id/closet_gentle_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/check_gentle_gray"
+            android:button="@null"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/closet_santa_green"
+            app:layout_constraintEnd_toEndOf="@+id/closet" />
+
+        <CheckBox
+            android:id="@+id/closet_santa_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/check_santa_red"
+            android:button="@null"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/closet_tie_red"
+            app:layout_constraintStart_toStartOf="@+id/closet" />
+
+        <CheckBox
+            android:id="@+id/closet_santa_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/check_santa_green"
+            android:button="@null"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/closet_tie_green"
+            app:layout_constraintEnd_toEndOf="@+id/closet" />
+
+        <CheckBox
+            android:id="@+id/closet_tie_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/check_tie_red"
+            android:button="@null"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/closet"
+            app:layout_constraintStart_toStartOf="@+id/closet" />
+
+        <CheckBox
+            android:id="@+id/closet_tie_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/check_tie_green"
+            android:button="@null"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/closet"
+            app:layout_constraintEnd_toEndOf="@+id/closet" />
+
+        <ImageView
+            android:id="@+id/closet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:foregroundGravity="center"
+            android:translationZ="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/closet" />
+
+        <ImageView
+            android:id="@+id/floor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/closet_floor" />
+
+        <ImageButton
+            android:id="@+id/wear"
+            android:background="@drawable/button_wear"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="75dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@drawable/closet" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </RelativeLayout>

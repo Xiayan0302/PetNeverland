@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -15,12 +16,24 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class b_Game_closet extends AppCompatActivity  {
+public class b_Game_closet extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
+
+    private CheckBox gentle_black;
+    private CheckBox gentle_gray;
+    private CheckBox santa_red;
+    private CheckBox santa_green;
+    private CheckBox tie_red;
+    private CheckBox tie_green;
+
+    private ImageButton wear;
+    boolean closet_max = true;
 
     Dialog myDialog;
 
@@ -29,6 +42,20 @@ public class b_Game_closet extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bgame_closet);
 
+        //設定食物
+        gentle_black=findViewById(R.id.closet_gentle_black);
+        gentle_gray=findViewById(R.id.closet_gentle_gray);
+        santa_red=findViewById(R.id.closet_santa_red);
+        santa_green=findViewById(R.id.closet_santa_green);
+        tie_red=findViewById(R.id.closet_tie_red);
+        tie_green=findViewById(R.id.closet_tie_green);
+
+        gentle_black.setOnCheckedChangeListener(this);
+        gentle_gray.setOnCheckedChangeListener(this);
+        santa_red.setOnCheckedChangeListener(this);
+        santa_green.setOnCheckedChangeListener(this);
+        tie_red.setOnCheckedChangeListener(this);
+        tie_green.setOnCheckedChangeListener(this);
 
 
 
@@ -120,4 +147,213 @@ public class b_Game_closet extends AppCompatActivity  {
 
     } //OnCreate
 
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean isCheck) {
+        switch (compoundButton.getId()){
+
+            case R.id.closet_gentle_black:
+                if (gentle_black.isChecked()){
+                    gentle_gray.setChecked(false);
+                    santa_red.setChecked(false);
+                    santa_green.setChecked(false);
+                    tie_red.setChecked(false);
+                    tie_green.setChecked(false);
+
+                    wear=findViewById(R.id.wear);
+
+                    wear.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if(closet_max == true) {
+                                //設置popup
+                                ImageButton button;
+                                myDialog.setContentView(R.layout.activity_wear_gentle_black);
+                                button = (ImageButton) myDialog.findViewById(R.id.dismiss);
+                                button.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        myDialog.dismiss();
+                                    }
+                                });
+                                myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                myDialog.show();
+                            }
+                        }
+                    });
+
+                }
+                break;
+
+            case R.id.closet_gentle_gray:
+                if (gentle_gray.isChecked()){
+                    gentle_black.setChecked(false);
+                    santa_red.setChecked(false);
+                    santa_green.setChecked(false);
+                    tie_red.setChecked(false);
+                    tie_green.setChecked(false);
+
+                    wear=findViewById(R.id.wear);
+
+                    wear.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if(closet_max == true) {
+                                //設置popup
+                                ImageButton button;
+                                myDialog.setContentView(R.layout.activity_wear_gentle_gray);
+                                button = (ImageButton) myDialog.findViewById(R.id.dismiss);
+                                button.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        myDialog.dismiss();
+                                    }
+                                });
+                                myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                myDialog.show();
+                            }
+                        }
+                    });
+
+                }
+                break;
+
+            case R.id.closet_santa_red:
+                if (santa_red.isChecked()){
+                    gentle_black.setChecked(false);
+                    gentle_gray.setChecked(false);
+                    santa_green.setChecked(false);
+                    tie_red.setChecked(false);
+                    tie_green.setChecked(false);
+
+                    wear=findViewById(R.id.wear);
+
+                    wear.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if(closet_max == true) {
+                                //設置popup
+                                ImageButton button;
+                                myDialog.setContentView(R.layout.activity_wear_santa_red);
+                                button = (ImageButton) myDialog.findViewById(R.id.dismiss);
+                                button.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        myDialog.dismiss();
+                                    }
+                                });
+                                myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                myDialog.show();
+                            }
+                        }
+                    });
+
+                }
+                break;
+
+            case R.id.closet_santa_green:
+                if (santa_green.isChecked()){
+                    gentle_black.setChecked(false);
+                    gentle_gray.setChecked(false);
+                    santa_red.setChecked(false);
+                    tie_red.setChecked(false);
+                    tie_green.setChecked(false);
+
+                    wear=findViewById(R.id.wear);
+
+                    wear.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if(closet_max == true) {
+                                //設置popup
+                                ImageButton button;
+                                myDialog.setContentView(R.layout.activity_wear_santa_green);
+                                button = (ImageButton) myDialog.findViewById(R.id.dismiss);
+                                button.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        myDialog.dismiss();
+                                    }
+                                });
+                                myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                myDialog.show();
+                            }
+                        }
+                    });
+
+                }
+                break;
+
+            case R.id.closet_tie_red:
+                if (tie_red.isChecked()){
+                    gentle_black.setChecked(false);
+                    gentle_gray.setChecked(false);
+                    santa_red.setChecked(false);
+                    santa_green.setChecked(false);
+                    tie_green.setChecked(false);
+
+                    wear=findViewById(R.id.wear);
+
+                    wear.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if(closet_max == true) {
+                                //設置popup
+                                ImageButton button;
+                                myDialog.setContentView(R.layout.activity_wear_tie_red);
+                                button = (ImageButton) myDialog.findViewById(R.id.dismiss);
+                                button.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        myDialog.dismiss();
+                                    }
+                                });
+                                myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                myDialog.show();
+                            }
+                        }
+                    });
+
+                }
+                break;
+
+            case R.id.closet_tie_green:
+                if (tie_green.isChecked()){
+                    gentle_black.setChecked(false);
+                    gentle_gray.setChecked(false);
+                    santa_red.setChecked(false);
+                    santa_green.setChecked(false);
+                    tie_red.setChecked(false);
+
+                    wear=findViewById(R.id.wear);
+
+                    wear.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if(closet_max == true) {
+
+                                //設置popup
+                                ImageButton button;
+                                myDialog.setContentView(R.layout.activity_wear_tie_green);
+                                button = (ImageButton) myDialog.findViewById(R.id.dismiss);
+                                button.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        myDialog.dismiss();
+                                    }
+                                });
+                                myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                myDialog.show();
+
+                            }
+                        }
+                    });
+
+                }
+                break;
+
+            default:
+                break;
+        }
+
+    }
 }

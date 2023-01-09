@@ -189,16 +189,16 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/background_floor" />
 
-            <Button
-                android:id="@+id/eat"
-                android:layout_width="120dp"
-                android:layout_height="60dp"
-                android:text="吃掉"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@drawable/food_shelf"
-                android:layout_marginBottom="85dp"/>
+        <ImageButton
+            android:id="@+id/eat"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="75dp"
+            android:background="@drawable/button_eat"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@drawable/food_shelf" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

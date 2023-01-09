@@ -33,10 +33,7 @@ public class a_Game_food extends AppCompatActivity implements CompoundButton.OnC
     private CheckBox egg;
     private CheckBox ginger;
 
-    private Button eat;
-
-    private ImageView anim_doll;
-    private AnimationDrawable ad;
+    private ImageButton eat;
 
     TextView Eating;
     ImageView Statefood;

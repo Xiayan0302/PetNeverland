@@ -9,25 +9,23 @@
     >
 
 
+    <!--Start-->
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="731dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/background_room" />
+        app:srcCompat="@drawable/background_main" />
 
-    <!--Start-->
     <ImageButton
         android:id="@+id/start"
         android:onClick="gotoMainGameActivity"
-        android:layout_width="290dp"
-        android:layout_height="92dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="250dp"
         android:background="@drawable/press_button_start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,8 +36,8 @@
     <ImageButton
         android:id="@+id/setting"
         android:onClick="ShowPopup"
-        android:layout_width="290dp"
-        android:layout_height="92dp"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/press_button_set"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,8 +48,8 @@
     <!--developer-->
     <ImageButton
         android:id="@+id/developer"
-        android:layout_width="290dp"
-        android:layout_height="92dp"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/press_button_dev"
         app:layout_constraintEnd_toEndOf="parent"
