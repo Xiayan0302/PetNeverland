@@ -48,6 +48,7 @@ public class d_Game_message extends AppCompatActivity
         aa = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, aMemo);
 
+
         lv.setAdapter(aa);    //設定 listView1 的內容
 
         //設定 listView1 被按一下的監聽器

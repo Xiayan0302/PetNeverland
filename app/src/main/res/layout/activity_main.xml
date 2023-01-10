@@ -6,27 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:layout_gravity="center"
+    android:background="@drawable/background_main"
     >
 
-
     <!--Start-->
+
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/app_title"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:src="@drawable/app_title"
+        android:variablePadding="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background_main" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/start"
-        android:onClick="gotoMainGameActivity"
         android:layout_width="280dp"
         android:layout_height="80dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="270dp"
         android:background="@drawable/press_button_start"
+        android:onClick="gotoMainGameActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,11 +37,11 @@
     <!--Settings-->
     <ImageButton
         android:id="@+id/setting"
-        android:onClick="ShowPopup"
         android:layout_width="280dp"
         android:layout_height="80dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/press_button_set"
+        android:onClick="ShowPopup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/start"
@@ -50,12 +52,13 @@
         android:id="@+id/developer"
         android:layout_width="280dp"
         android:layout_height="80dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/press_button_dev"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setting"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:onClick="ShowPopupDEV" />
 
 
 
